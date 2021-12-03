@@ -20,8 +20,10 @@ function cityWeather(e){
 function drawWeather(data){
     var celcius = Math.round(parseFloat(data.main.temp)-273.15);
     var description = data.weather[0].description;
+    var feels_like = Math.round(parseFloat(data.main.feels_like)-273.15);
 
     document.querySelector('#description').innerHTML= description;
     document.querySelector('#temp').innerHTML = celcius + '&deg;';
     document.querySelector('#location').innerHTML = data.name;
+    document.querySelector('#feels_like').innerHTML = 'feels like' + ' ' +  feels_like + '&deg;';
 }
